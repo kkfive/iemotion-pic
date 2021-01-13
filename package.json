@@ -1,6 +1,6 @@
 {
   "name": "iemotion-pic",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "iemotion的图片库",
   "main": "index.js",
   "repository": "https://github.com/Dreamy-TZK/iemotion-pic",

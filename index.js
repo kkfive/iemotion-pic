@@ -3,10 +3,12 @@ const fs = require('fs')
 const path = require('path')
 
 // json文件修饰前缀
+// const prefix = 'http://localhost:3000/data/'
 const prefix =
   'https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/dist/data/'
 // 图片修饰前缀
-const filePrefix = 'https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic/img/'
+const filePrefix =
+  'https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/'
 // 图片存放目录
 const picDataDir = 'img'
 
@@ -30,6 +32,18 @@ async function getCategoryFiles(filePath) {
   }
   return picItem
 }
+// 生成图片json映射
+function generatePicJson(name, picList) {
+  const imgList = []
+  picList.forEach((url) => {
+    name = url.split('/').pop().split('.')[0]
+    imgList.push({
+      name,
+      url
+    })
+  })
+  return imgList
+}
 // 生成文件
 async function generateFiles(filePath) {
   const picItem = await getCategoryFiles(filePath)
@@ -42,12 +56,13 @@ async function generateFiles(filePath) {
     // item 为每一个 键 名
     const fileContent = {
       common: [],
-      all: picItem[item]
+      all: generatePicJson(item, picItem[item])
     }
     nameJson.data.push({
       name: item,
       url: `${prefix}${item}.json`
     })
+
     await fse.mkdirs(`dist/data`)
     await fse.writeFile(`dist/data/${item}.json`, JSON.stringify(fileContent))
   }
