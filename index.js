@@ -3,9 +3,10 @@ const fs = require('fs')
 const path = require('path')
 
 // json文件修饰前缀
-const prefix = 'https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic/dist/data/'
+const prefix =
+  'https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/dist/data/'
 // 图片修饰前缀
-const filePrefix = 'https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic/data/'
+const filePrefix = 'https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic/img/'
 // 图片存放目录
 const picDataDir = 'img'
 
