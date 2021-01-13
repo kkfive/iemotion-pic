@@ -2,9 +2,12 @@ const fse = require('fs-extra')
 const fs = require('fs')
 const path = require('path')
 
-const prefix = 'https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic/'
-const filePrefix = 'https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/'
-const picDataDir = 'data'
+// json文件修饰前缀
+const prefix = 'https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic/dist/data/'
+// 图片修饰前缀
+const filePrefix = 'https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic/data/'
+// 图片存放目录
+const picDataDir = 'img'
 
 // 获取目录下文件夹
 async function getDirFiles(filePath) {
@@ -21,7 +24,7 @@ async function getCategoryFiles(filePath) {
       path.join(__dirname, filePath, categoryList[i])
     )
     picItem[categoryList[i]] = fileList.map((item) => {
-      return `${prefix}${categoryList[i]}/${item}`
+      return `${filePrefix}${categoryList[i]}/${item}`
     })
   }
   return picItem
@@ -42,7 +45,7 @@ async function generateFiles(filePath) {
     }
     nameJson.data.push({
       name: item,
-      url: `${filePrefix}${item}.json`
+      url: `${prefix}${item}.json`
     })
     await fse.mkdirs(`dist/data`)
     await fse.writeFile(`dist/data/${item}.json`, JSON.stringify(fileContent))
