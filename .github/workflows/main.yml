@@ -45,3 +45,6 @@ jobs:
           npm publish
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: 7. 刷新缓存
+        run: |
+          curl https://purge.jsdelivr.net/npm/iemotion-pic@latest/dist/name.json
