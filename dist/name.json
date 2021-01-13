@@ -1,0 +1,110 @@
+{
+  "notice": "",
+  "cdn": "",
+  "data": [
+    {
+      "name": "HONKAI3",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/HONKAI3.json"
+    },
+    {
+      "name": "TsuriMeJu",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/TsuriMeJu.json"
+    },
+    {
+      "name": "aliwangwang",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/aliwangwang.json"
+    },
+    {
+      "name": "aru",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/aru.json"
+    },
+    {
+      "name": "bili_tv_gif",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/bili_tv_gif.json"
+    },
+    {
+      "name": "bilibili",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/bilibili.json"
+    },
+    {
+      "name": "blob",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/blob.json"
+    },
+    {
+      "name": "menhera-chan",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/menhera-chan.json"
+    },
+    {
+      "name": "paopao",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/paopao.json"
+    },
+    {
+      "name": "qq_2020f",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/qq_2020f.json"
+    },
+    {
+      "name": "qq_gif",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/qq_gif.json"
+    },
+    {
+      "name": "qq_png",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/qq_png.json"
+    },
+    {
+      "name": "svip黄脸",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/svip黄脸.json"
+    },
+    {
+      "name": "tieba",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/tieba.json"
+    },
+    {
+      "name": "weibo",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/weibo.json"
+    },
+    {
+      "name": "​罗罗布",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/​罗罗布.json"
+    },
+    {
+      "name": "兔斯基",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/兔斯基.json"
+    },
+    {
+      "name": "冷兔",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/冷兔.json"
+    },
+    {
+      "name": "嗷大喵小表情",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/嗷大喵小表情.json"
+    },
+    {
+      "name": "恶搞QQ",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/恶搞QQ.json"
+    },
+    {
+      "name": "气泡熊",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/气泡熊.json"
+    },
+    {
+      "name": "熊孩子",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/熊孩子.json"
+    },
+    {
+      "name": "猥琐萌",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/猥琐萌.json"
+    },
+    {
+      "name": "酷安",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/酷安.json"
+    },
+    {
+      "name": "阿狸",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/阿狸.json"
+    },
+    {
+      "name": "默认",
+      "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/默认.json"
+    }
+  ]
+}
