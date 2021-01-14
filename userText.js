@@ -30,4 +30,10 @@ async function generateJsonByText(fileBasePath, fileName) {
   await fse.writeJSON(`./user_text_temp/${fileName.split('.')[0]}.json`, obj)
 }
 
-generateJsonByText('./user_text/', 'a.txt')
+async function init() {
+  const fileList = await fse.readdir('./user_text/')
+  fileList.forEach((file) => {
+    generateJsonByText('./user_text/', file)
+  })
+}
+init()
