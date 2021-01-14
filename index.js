@@ -11,7 +11,8 @@ const filePrefix =
   'https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/'
 // 图片存放目录
 const picDataDir = 'img'
-
+// 分类名重命名映射
+const reName = require('./reName')
 // 获取目录下文件夹
 async function getDirFiles(filePath) {
   const fileList = await fse.readdir(path.join(__dirname, filePath))
@@ -59,7 +60,7 @@ async function generateFiles(filePath) {
       all: generatePicJson(item, picItem[item])
     }
     nameJson.data.push({
-      name: item,
+      name: reName[item] || item,
       url: `${prefix}${item}.json`
     })
 
