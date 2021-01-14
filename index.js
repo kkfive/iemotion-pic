@@ -1,14 +1,9 @@
 const fse = require('fs-extra')
 const fs = require('fs')
 const path = require('path')
+const config = require('./config')
+const { filePrefix, picPrefix, power } = config
 
-// json文件修饰前缀
-// const prefix = 'http://localhost:3000/data/'
-const prefix =
-  'https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/dist/data/'
-// 图片修饰前缀
-const filePrefix =
-  'https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/'
 // 图片存放目录
 const picDataDir = 'img'
 // 分类名重命名映射
@@ -28,7 +23,7 @@ async function getCategoryFiles(filePath) {
       path.join(__dirname, filePath, categoryList[i])
     )
     picItem[categoryList[i]] = fileList.map((item) => {
-      return `${filePrefix}${categoryList[i]}/${item}`
+      return `${picPrefix}${categoryList[i]}/${item}`
     })
   }
   return picItem
@@ -51,27 +46,53 @@ async function generateFiles(filePath) {
   const nameJson = {
     notice: '',
     cdn: '',
-    data: []
+    power,
+    data: [],
+    custom: []
   }
   for (var item in picItem) {
     // item 为每一个 键 名
     const fileContent = {
+      // 分类名
+      name: item,
+      power,
       common: [],
       all: generatePicJson(item, picItem[item])
     }
     nameJson.data.push({
       name: reName[item] || item,
-      url: `${prefix}${item}.json`
+      url: `${filePrefix}${item}.json`
     })
 
     await fse.mkdirs(`dist/data`)
     await fse.writeFile(`dist/data/${item}.json`, JSON.stringify(fileContent))
   }
+  // 获取用户自己json文件
+  const userJsonList = await getDirFiles('./user_json')
+  // 将用户自定义的json添加到name.json文件中
+  userJsonList.forEach((item) => {
+    const fileName = item.split('.')[0]
+    nameJson.custom.push({
+      name: fileName,
+      url: `${filePrefix}${item}`
+    })
+  })
   await fse.writeFile('dist/name.json', JSON.stringify(nameJson))
+  await moveDir('./user_json', 'dist/data')
+
   console.log('生成完毕')
 }
+// 拷贝文件
+async function moveDir(oldPath, newPath) {
+  const err = await fse.copy(oldPath, newPath)
+  if (err) {
+    console.log('出错了', err)
+  } else {
+    console.log('自定义json文件移动成功')
+  }
+}
 
-// 删除dist目录
+// 删除目录
 function delDir(path) {
   let files = []
   if (fs.existsSync(path)) {
