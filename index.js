@@ -79,18 +79,28 @@ async function generateFiles(filePath) {
     })
   })
   await fse.writeFile('dist/name.json', JSON.stringify(nameJson))
-  await moveDir('./user_json', 'temp')
+  await moveDir('./user_json', './dist/data')
 
   console.log('生成完毕')
 }
 // 拷贝文件
 async function moveDir(oldPath, newPath) {
-  const err = await fse.copy(oldPath, newPath)
-  if (err) {
-    console.log('出错了', err)
-  } else {
-    console.log('自定义json文件移动成功')
-  }
+  const err = await fse.copy(
+    oldPath,
+    newPath,
+    {
+      overwrite: false,
+      errorOnExist: true
+    },
+    function (err) {
+      if (err) {
+        console.log(err.message)
+        console.log('自定义json的文件名与img目录下的目录名不能重名！')
+      } else {
+        console.log('移动成功')
+      }
+    }
+  )
 }
 
 // 删除目录
