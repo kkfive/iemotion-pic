@@ -40,6 +40,7 @@ function generatePicJson(name, picList) {
   })
   return imgList
 }
+
 // 生成文件
 async function generateFiles(filePath) {
   const picItem = await getCategoryFiles(filePath)
@@ -78,7 +79,7 @@ async function generateFiles(filePath) {
     })
   })
   await fse.writeFile('dist/name.json', JSON.stringify(nameJson))
-  await moveDir('./user_json', 'dist/data')
+  await moveDir('./user_json', 'temp')
 
   console.log('生成完毕')
 }
