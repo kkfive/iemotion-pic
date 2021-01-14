@@ -13,6 +13,8 @@
     "评论"
   ],
   "dependencies": {
+    "axios": "^0.21.1",
+    "form-data": "^3.0.0",
     "fs-extra": "^9.0.1"
   }
 }
