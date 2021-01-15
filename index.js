@@ -62,7 +62,7 @@ async function generateFiles(filePath) {
     }
     nameJson.data.push({
       name: reName[item] || item,
-      url: `data/${filePrefix}${item}.json`
+      url: `${filePrefix}data/${item}.json`
     })
 
     await fse.mkdirs(`dist/data`)
@@ -81,7 +81,7 @@ async function generateFiles(filePath) {
       const fileName = userJsonList[u]
       nameJson.custom[userJsonDir[i]].push({
         name: fileName.split('.')[0],
-        url: `/${filePrefix}${userJsonDir[i]}/${fileName}`
+        url: `${filePrefix}${userJsonDir[i]}/${fileName}`
       })
     }
   }
