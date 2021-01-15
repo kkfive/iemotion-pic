@@ -49,7 +49,7 @@ async function generateFiles(filePath) {
     cdn: '',
     power,
     data: [],
-    custom: []
+    custom: {}
   }
   for (var item in picItem) {
     // item 为每一个 键 名
@@ -62,24 +62,31 @@ async function generateFiles(filePath) {
     }
     nameJson.data.push({
       name: reName[item] || item,
-      url: `${filePrefix}${item}.json`
+      url: `data/${filePrefix}${item}.json`
     })
 
     await fse.mkdirs(`dist/data`)
     await fse.writeFile(`dist/data/${item}.json`, JSON.stringify(fileContent))
   }
   // 获取用户自己json文件
-  const userJsonList = await getDirFiles('./user_json')
+  const userJsonDir = await fse.readdir('./user_json')
   // 将用户自定义的json添加到name.json文件中
-  userJsonList.forEach((item) => {
-    const fileName = item.split('.')[0]
-    nameJson.custom.push({
-      name: fileName,
-      url: `${filePrefix}${item}`
-    })
-  })
+  for (let i = 0; i < userJsonDir.length; i++) {
+    // 遍历user_json目录下的文件夹 userJsonDir[i]
+    nameJson.custom[userJsonDir[i]] = []
+    // 获取文件夹下的文件
+    const userJsonList = await fse.readdir(`./user_json/${userJsonDir}`)
+    for (let u = 0; u < userJsonList.length; u++) {
+      // 获取到每一个文件名
+      const fileName = userJsonList[u]
+      nameJson.custom[userJsonDir[i]].push({
+        name: fileName.split('.')[0],
+        url: `/${filePrefix}${userJsonDir[i]}/${fileName}`
+      })
+    }
+  }
   await fse.writeFile('dist/name.json', JSON.stringify(nameJson))
-  await moveDir('./user_json', './dist/data')
+  await moveDir('./user_json', './dist/')
 
   console.log('生成完毕')
 }

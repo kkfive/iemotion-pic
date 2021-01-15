@@ -10,7 +10,7 @@ module.exports = {
   // 生成文件的版权
   power: 'https://emotion.xiaokang.me/',
   // json文件修饰前缀
-  filePrefix: 'https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/data/',
+  filePrefix: 'https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/',
   // 图片修饰前缀
   picPrefix: 'https://cdn.jsdelivr.net/gh/Dreamy-TZK/iemotion-pic@latest/img/'
   //

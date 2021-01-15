@@ -12,7 +12,11 @@ const fs = require('fs')
 const fse = require('fs-extra')
 const path = require('path')
 const FormData = require('form-data')
-const token = '19798ec5eddb4ba2f5f9b29f1dcc56a7'
+// 图床TOKEN
+const token = ''
+// 上传后json输出位置
+const outpath = 'picBed_json'
+// 上传地址
 // const url = 'https://pic.alexhchu.com/api/upload'
 const url = 'https://7bu.top/api/upload'
 /**
@@ -41,23 +45,21 @@ async function getFilesList(filePath) {
  */
 async function uploadImg(filePath, imgObj) {
   for (let item in imgObj) {
-    for (let i = 0; i < imgObj[item].length; i++) {
-      // console.log(path.join(filePath, item, imgObj[item][i]))
-      const data = await upload(path.join(filePath, item, imgObj[item][i]))
-      // console.log(result)
-      /**
-       * {
-          name: '1.png',
-          url: 'https://7.dusays.com/2021/01/14/5503fa5e11810.png',
-          size: 9342,
-          mime: 'image/png',
-          sha1: 'd7461f14d5180a7421969899fdac75a0f20ec712',
-          md5: '7a10c5f3c0ec6c42355907984f8a1bdc',
-          quota: '1073741824.00',
-          use_quota: '3197076.00'
-        }
-       */
+    const obj = {
+      name: item,
+      power: 'https://emotion.xiaokang.me/',
+      common: [],
+      all: []
     }
+    for (let i = 0; i < imgObj[item].length; i++) {
+      const data = await upload(path.join(filePath, item, imgObj[item][i]))
+      obj.all.push({
+        name: imgObj[item][i].split('.')[0],
+        url: data.url
+      })
+    }
+    // 保存json文件
+    await fse.writeJson(`./${outpath}/${item}.json`, obj)
   }
 }
 
@@ -67,7 +69,7 @@ async function init(imgPath) {
   await uploadImg(imgPath, imgObj)
 }
 
-// init('./user_img')
+init('./user_img')
 
 async function upload(imgPath) {
   var localFile = fs.createReadStream(imgPath)
@@ -91,7 +93,7 @@ async function upload(imgPath) {
       await axios
         .post(url, formData, { headers })
         .then((res) => {
-          // console.log('上传成功', res.data)
+          console.log(`${imgPath}上传成功=>`, res.data.data.url)
           // obj = res.data.data
           resolve(res.data.data)
         })
