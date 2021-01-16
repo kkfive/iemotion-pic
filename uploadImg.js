@@ -15,7 +15,7 @@ const FormData = require('form-data')
 // 图床TOKEN
 const token = ''
 // 上传后json输出位置
-const outpath = 'picBed_json'
+const outpath = 'user_json_temp'
 // 上传地址
 // const url = 'https://pic.alexhchu.com/api/upload'
 const url = 'https://7bu.top/api/upload'
