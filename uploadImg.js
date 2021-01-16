@@ -69,7 +69,7 @@ async function init(imgPath) {
   await uploadImg(imgPath, imgObj)
 }
 
-init('./user_img')
+init('./upload_img')
 
 async function upload(imgPath) {
   var localFile = fs.createReadStream(imgPath)

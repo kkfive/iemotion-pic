@@ -75,7 +75,7 @@ async function generateFiles(filePath) {
     // 遍历user_json目录下的文件夹 userJsonDir[i]
     nameJson.custom[userJsonDir[i]] = []
     // 获取文件夹下的文件
-    const userJsonList = await fse.readdir(`./user_json/${userJsonDir}`)
+    const userJsonList = await fse.readdir(`./user_json/${userJsonDir[i]}`)
     for (let u = 0; u < userJsonList.length; u++) {
       // 获取到每一个文件名
       const fileName = userJsonList[u]
@@ -86,7 +86,7 @@ async function generateFiles(filePath) {
     }
   }
   await fse.writeFile('dist/name.json', JSON.stringify(nameJson))
-  await moveDir('./user_json', './dist/')
+  await moveDir('./user_json/', './dist/')
 
   console.log('生成完毕')
 }

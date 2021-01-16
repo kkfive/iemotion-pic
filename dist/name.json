@@ -518,6 +518,176 @@
         "name": "阿狸",
         "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/7bu图床/阿狸.json"
       }
+    ],
+    "OSS": [
+      {
+        "name": "Arcaea",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Arcaea.json"
+      },
+      {
+        "name": "Convenience-Store-Notes2",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Convenience-Store-Notes2.json"
+      },
+      {
+        "name": "Coolapk",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Coolapk.json"
+      },
+      {
+        "name": "Cute-Emoji",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Cute-Emoji.json"
+      },
+      {
+        "name": "Genshin",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Genshin.json"
+      },
+      {
+        "name": "HONKAI3-AIChan",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/HONKAI3-AIChan.json"
+      },
+      {
+        "name": "HONKAI3-Crayon",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/HONKAI3-Crayon.json"
+      },
+      {
+        "name": "HONKAI3-Daily",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/HONKAI3-Daily.json"
+      },
+      {
+        "name": "HONKAI3-Durandal-Search",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/HONKAI3-Durandal-Search.json"
+      },
+      {
+        "name": "HONKAI3-MEI",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/HONKAI3-MEI.json"
+      },
+      {
+        "name": "HONKAI3-NEWYEAR-2019",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/HONKAI3-NEWYEAR-2019.json"
+      },
+      {
+        "name": "HONKAI3-Pure",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/HONKAI3-Pure.json"
+      },
+      {
+        "name": "HONKAI3-Stan",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/HONKAI3-Stan.json"
+      },
+      {
+        "name": "HONKAI3-Star",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/HONKAI3-Star.json"
+      },
+      {
+        "name": "Heybox",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Heybox.json"
+      },
+      {
+        "name": "Little-Bad",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Little-Bad.json"
+      },
+      {
+        "name": "Mafumafu",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Mafumafu.json"
+      },
+      {
+        "name": "Majotabi",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Majotabi.json"
+      },
+      {
+        "name": "Marup",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Marup.json"
+      },
+      {
+        "name": "Menhera-chan",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Menhera-chan.json"
+      },
+      {
+        "name": "QQ",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/QQ.json"
+      },
+      {
+        "name": "Set667",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Set667.json"
+      },
+      {
+        "name": "Snow-Miku",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Snow-Miku.json"
+      },
+      {
+        "name": "Sweetie-Bunny",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Sweetie-Bunny.json"
+      },
+      {
+        "name": "Tieba-New",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Tieba-New.json"
+      },
+      {
+        "name": "Tsuri-me-ju_mimi",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Tsuri-me-ju_mimi.json"
+      },
+      {
+        "name": "Yurui-Neko",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/Yurui-Neko.json"
+      },
+      {
+        "name": "ali",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/ali.json"
+      },
+      {
+        "name": "alu",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/alu.json"
+      },
+      {
+        "name": "aodamiao",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/aodamiao.json"
+      },
+      {
+        "name": "baitian",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/baitian.json"
+      },
+      {
+        "name": "bilibili2233",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/bilibili2233.json"
+      },
+      {
+        "name": "bilibiliHotKey",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/bilibiliHotKey.json"
+      },
+      {
+        "name": "bilibilitv",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/bilibilitv.json"
+      },
+      {
+        "name": "dingtalk",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/dingtalk.json"
+      },
+      {
+        "name": "lengtu",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/lengtu.json"
+      },
+      {
+        "name": "teletubbies",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/teletubbies.json"
+      },
+      {
+        "name": "tom_jerry",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/tom_jerry.json"
+      },
+      {
+        "name": "tusiji",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/tusiji.json"
+      },
+      {
+        "name": "weibo",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/weibo.json"
+      },
+      {
+        "name": "weisuomeng",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/weisuomeng.json"
+      },
+      {
+        "name": "xiaochou",
+        "url": "https://cdn.jsdelivr.net/npm/iemotion-pic@latest/dist/OSS/xiaochou.json"
+      }
     ]
   }
 }
