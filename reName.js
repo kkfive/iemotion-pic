@@ -24,7 +24,5 @@ module.exports = {
     lengtu: '冷兔',
     dingtalk: '钉钉'
   },
-  '7bu图床': {
-    Arcaea: 'test'
-  }
+  '7bu图床': {}
 }
