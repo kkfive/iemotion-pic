@@ -55,13 +55,13 @@ async function generateFiles(filePath) {
     // item 为每一个 键 名
     const fileContent = {
       // 分类名
-      name: item,
+      name: reName.data[item] || item,
       power,
       common: [],
       all: generatePicJson(item, picItem[item])
     }
     nameJson.data.push({
-      name: reName[item] || item,
+      name: reName.data[item] || item,
       url: `${filePrefix}data/${item}.json`
     })
 
@@ -79,8 +79,14 @@ async function generateFiles(filePath) {
     for (let u = 0; u < userJsonList.length; u++) {
       // 获取到每一个文件名
       const fileName = userJsonList[u]
+      // console.log(fileName.split('.')[0], userJsonDir[i])
+      // console.log(reName[userJsonDir[i]][fileName.split('.')[0]])
+      const newName = reName[userJsonDir[i]]
+        ? reName[userJsonDir[i]][fileName.split('.')[0]]
+        : fileName.split('.')[0]
+
       nameJson.custom[userJsonDir[i]].push({
-        name: fileName.split('.')[0],
+        name: newName || fileName.split('.')[0],
         url: `${filePrefix}${userJsonDir[i]}/${fileName}`
       })
     }

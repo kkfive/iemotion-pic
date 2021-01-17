@@ -10,5 +10,21 @@
  */
 module.exports = {
   // default: '默认'
-  baitian: '柏田'
+
+  data: { baitian: '柏田' },
+  Heo: {},
+  OSS: {
+    ali: '阿狸',
+    alu: '阿鲁',
+    aodamiao: '嗷大喵',
+    baitian: '柏田',
+    weibo: '微博',
+    'Tieba-New': '贴吧新表情',
+    tusiji: '兔斯基',
+    lengtu: '冷兔',
+    dingtalk: '钉钉'
+  },
+  '7bu图床': {
+    Arcaea: 'test'
+  }
 }
