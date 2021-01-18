@@ -38,6 +38,10 @@ jobs:
       - name: 5. 生成文件
         run: |
           export TZ='Asia/Shanghai'
+          echo ::set-env name=RELEASE_VERSION::${GITHUB_REF#refs/*/}
+          echo $RELEASE_VERSION
+          echo ${{ env.RELEASE_VERSION }}
+          echo ${{ github.ref }}
           node index.js
       - name: 6. 发布包
         run: |
@@ -66,7 +70,4 @@ jobs:
 
       - name: 7. 刷新缓存
         run: |
-          echo $RELEASE_VERSION
-          echo ${{ env.RELEASE_VERSION }}
-          echo ::set-env name=RELEASE_VERSION::${GITHUB_REF#refs/*/}
           curl https://purge.jsdelivr.net/npm/iemotion-pic@latest/dist/name.json
