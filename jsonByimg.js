@@ -10,9 +10,9 @@
 const fse = require('fs-extra')
 const path = require('path')
 // 图片地址前缀修饰
-const imgPrefix = 'https://twikoo-magic.oss-cn-hangzhou.aliyuncs.com/'
+const imgPrefix = 'https://cdn.jsdelivr.net/gh/zc998800/cdn/face/'
 // 版权
-const power = 'https://noionion.top/'
+const power = 'https://github.com/zc998800/cdn'
 
 /**
  * 获取文件列表

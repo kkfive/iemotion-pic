@@ -24,5 +24,8 @@ module.exports = {
     lengtu: '冷兔',
     dingtalk: '钉钉'
   },
-  '7bu图床': {}
+  '7bu图床': {},
+  火喵: {
+    gif: '火喵的动态表情'
+  }
 }
