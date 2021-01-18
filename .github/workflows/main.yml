@@ -35,39 +35,44 @@ jobs:
         run: |
           export TZ='Asia/Shanghai'
           yarn install
+
       - name: 5. 生成文件
         run: |
           export TZ='Asia/Shanghai'
-          echo ::set-env name=RELEASE_VERSION::${GITHUB_REF#refs/*/}
-          echo $RELEASE_VERSION
-          echo ${{ env.RELEASE_VERSION }}
-          echo ${{ github.ref }}
           node index.js
-      - name: 6. 发布包
+
+      - name: 6. 读取当前版本号
+        id: version
+        uses: ashley-taylor/read-json-property-action@v1.0
+        with:
+          path: ./package.json
+          property: version
+
+      - name: 7. 读取描述文件
+        id: description
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./description.txt
+
+      - name: 8. 发布NPM包
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
           npm publish
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
-      - name: Generate changelog
-        id: changelog
-        uses: metcalfc/changelog-generator@v0.4.1
-        with:
-          myToken: ${{ secrets.GH_TOKEN }}
-
-      - name: Create Release
+      - name: 9. 创建GitHub Release
         id: create_release
         uses: actions/create-release@latest
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: ${{ steps.changelog.outputs.changelog }}
+          tag_name: v${{steps.version.outputs.value}}
+          release_name: v${{steps.version.outputs.value}}
+          body: ${{steps.description.outputs.content}}
           draft: false
           prerelease: false
 
-      - name: 7. 刷新缓存
+      - name: 10. 刷新缓存
         run: |
           curl https://purge.jsdelivr.net/npm/iemotion-pic@latest/dist/name.json
