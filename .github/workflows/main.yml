@@ -45,6 +45,25 @@ jobs:
           npm publish
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+
+      - name: Generate changelog
+        id: changelog
+        uses: metcalfc/changelog-generator@v0.4.1
+        with:
+          myToken: ${{ secrets.GH_TOKEN }}
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@latest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: ${{ steps.changelog.outputs.changelog }}
+          draft: false
+          prerelease: false
+
       - name: 7. 刷新缓存
         run: |
           curl https://purge.jsdelivr.net/npm/iemotion-pic@latest/dist/name.json
