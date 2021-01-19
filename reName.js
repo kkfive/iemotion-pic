@@ -27,5 +27,9 @@ module.exports = {
   '7bu图床': {},
   火喵: {
     gif: '火喵的动态表情'
+  },
+  hanxea: {
+    huaji: '滑稽',
+    blackcat: '小黑猫'
   }
 }
