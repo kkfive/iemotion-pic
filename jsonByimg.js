@@ -10,9 +10,9 @@
 const fse = require('fs-extra')
 const path = require('path')
 // 图片地址前缀修饰
-const imgPrefix = 'https://cdn.jsdelivr.net/gh/hanxea/blog/'
+const imgPrefix = 'https://emotion.acs.pw/emotion/'
 // 版权
-const power = 'https://github.com/hanxea'
+const power = 'https://xiaokang.me/'
 
 /**
  * 获取文件列表

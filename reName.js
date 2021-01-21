@@ -31,5 +31,6 @@ module.exports = {
   hanxea: {
     huaji: '滑稽',
     blackcat: '小黑猫'
-  }
+  },
+  CloudFare: { baitian: '柏田' }
 }
