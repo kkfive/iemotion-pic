@@ -12,7 +12,10 @@ module.exports = {
   // default: '默认'
 
   data: { baitian: '柏田' },
-  Heo: {},
+  Heo: {
+    Sticker: 'Heo',
+    'Sticker-100': 'Heo-100'
+  },
   OSS: {
     ali: '阿狸',
     alu: '阿鲁',
